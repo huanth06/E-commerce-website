@@ -25,6 +25,12 @@ export default function Header() {
                 }, 0)
                 setQtyCart(newQty);
             }
+            if(data){
+                const dataCart = data.find(item => item.user.username === ctx.user)
+                if(dataCart?.id){
+                    setCtx({...ctx, cartProducts: dataCart.products, idCart: dataCart?.id})
+                }
+            }
         });
         axios.get("http://localhost:3000/categories").then((res) => {
             setCates(res.data);

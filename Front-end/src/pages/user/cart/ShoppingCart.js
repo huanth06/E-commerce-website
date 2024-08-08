@@ -54,7 +54,7 @@ export default function ShoppingCart() {
       alert("Update successful.")
     });
     const newQty = setLsQty(productCart);
-    setCtx({ ...ctx, qtyCart: newQty })
+    setCtx({ ...ctx, qtyCart: newQty, cartProducts: productCart})
   }
 
   const formatPrice = (price) => {
